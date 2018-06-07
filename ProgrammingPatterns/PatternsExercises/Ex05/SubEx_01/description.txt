@@ -4,3 +4,6 @@
 
 При решении этой задачи нельзя менять код CacheUpdater, MailSender DatabaseSaver
 Можно менять только код DatabaseSaverClient.main и добавлять новые классы\интерфейсы
+
+
+ПАТТЕР ДЕКОРАТОР

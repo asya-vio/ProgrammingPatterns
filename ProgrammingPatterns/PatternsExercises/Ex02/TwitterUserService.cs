@@ -10,7 +10,7 @@ namespace Patterns.Ex02
         readonly TwitterClient _client = new TwitterClient();
 
         /// <summary>
-        /// Этот метод содержить дублирование с VkUserService.GetUserInfo
+        /// Этот метод содержит дублирование с VkUserService.GetUserInfo
         /// необходимо избавиться от дублирования (см. задание)
         /// </summary>
         /// <param name="pageUrl"></param>

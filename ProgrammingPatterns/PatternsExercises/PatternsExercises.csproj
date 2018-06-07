@@ -65,8 +65,12 @@
     <Compile Include="Ex05\SubEx_01\DatabaseSaverClient.cs" />
     <Compile Include="Ex05\ExternalLibs\DatabaseSaver.cs" />
     <None Include="Ex05\SubEx_01\description.txt" />
-    <Compile Include="Ex05\SubEx_01\DatabaseMailSaver.cs" />
+    <Compile Include="Ex05\SubEx_01\DatabaseMailSender.cs" />
     <Compile Include="Ex05\SubEx_01\DatabaseUpdateCacheSaver.cs" />
+    <Compile Include="Ex05\SubEx_02\Publisher.cs" />
+    <Compile Include="Ex05\SubEx_02\MailSenderListener .cs" />
+    <Compile Include="Ex05\SubEx_02\ISaveListener.cs" />
+    <Compile Include="Ex05\SubEx_02\UpdateCacheListener.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

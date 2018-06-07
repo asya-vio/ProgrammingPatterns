@@ -6,7 +6,7 @@ namespace Patterns.Ex05.SubEx_01
     {
         public void Main(bool b)
         {
-            var databaseSaver = new DatabaseUpdateCacheSaver(new DatabaseMailSaver(new DatabaseSaver(), new MailSender()), new CacheUpdater());
+            var databaseSaver = new DatabaseUpdateCacheSaver(new DatabaseMailSender(new DatabaseSaver(), new MailSender()), new CacheUpdater());
             DoSmth(databaseSaver);
         }
 

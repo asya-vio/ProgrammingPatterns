@@ -7,13 +7,13 @@ using Patterns.Ex05.ExternalLibs;
 
 namespace Patterns.Ex05.SubEx_01
 {
-    class DatabaseMailSaver : IDatabaseSaver
+    class DatabaseMailSender : IDatabaseSaver
     {
         DatabaseSaver saver;
         MailSender sender;
         string email;
 
-        public DatabaseMailSaver(DatabaseSaver saver, MailSender sender)
+        public DatabaseMailSender(DatabaseSaver saver, MailSender sender)
         {
             this.saver = saver;
             this.sender = sender;
