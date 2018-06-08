@@ -15,34 +15,43 @@ namespace Patterns.Ex02
         /// </summary>
         /// <param name="pageUrl"></param>
         /// <returns></returns>
-        public UserInfo GetUserInfo(String pageUrl)
+        public UserInfo GetUserInfo(string pageUrl)
         {
-            var regex = new Regex("twitter.com/(.*)");
-            var userName = regex.Match(pageUrl).Groups[0].Value;
 
+            var userName = GetUserName(pageUrl);
             var userId = GetUserId(userName);
-
-            TwitterUser[] subscribers = _client.GetSubscribers(userId);
-
-            UserInfo[] friends = subscribers
-                .Select(c =>
-                {
-                    UserInfo userInfo = new UserInfo
-                    {
-                        UserId = c.UserId.ToString(),
-                        Name = _client.GetUserNameById(c.UserId)
-                    };
-                    return userInfo;
-                })
-                .ToArray();
 
             var result = new UserInfo
             {
                 Name = userName,
                 UserId = userId.ToString(),
-                Friends = friends
+                Friends = GetUserFriends(userId)
             };
             return result;
+        }
+
+        private string GetUserName(string pageUrl)
+        {
+            var regex = new Regex("twitter.com/(.*)");
+            return regex.Match(pageUrl).Groups[0].Value;
+
+        }
+
+        private UserInfo[] GetUserFriends(long userId)
+        {
+            TwitterUser[] subscribers = _client.GetSubscribers(userId);
+            UserInfo[] friends = subscribers
+            .Select(c =>
+            {
+                UserInfo userInfo = new UserInfo
+                {
+                    UserId = c.UserId.ToString(),
+                    Name = _client.GetUserNameById(c.UserId)
+                };
+                return userInfo;
+            })
+            .ToArray();
+
         }
 
         /// <summary>

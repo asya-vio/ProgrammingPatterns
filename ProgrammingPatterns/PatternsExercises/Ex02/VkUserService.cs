@@ -3,7 +3,7 @@
     public class VkUserService
     {
         /// <summary>
-        /// Этот метод содержить дублирование с TwitterUserService.GetUserInfo
+        /// Этот метод содержит дублирование с TwitterUserService.GetUserInfo
         /// необходимо избавиться от дублирования (см. задание)
         /// </summary>
         /// <param name="pageUrl"></param>
